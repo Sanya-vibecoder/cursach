@@ -19,10 +19,10 @@ public:
 
     void setRoomNumber(int roomNumber);
 
-    void pay(double amount);              // перевантаження 1
-    void pay(double amount, int months);  // перевантаження 2
+    void pay(double amount);              // overload 1
+    void pay(double amount, int months);  // overload 2
 
-    Student operator+(double amount) const;     // перевантаження операторів
+    Student operator+(double amount) const;  // operator overloading
     Student& operator+=(double amount);
     bool operator==(const Student& other) const;
 
@@ -30,4 +30,4 @@ public:
 
     friend std::ostream& operator<<(std::ostream& out, const Student& s);
     friend std::istream& operator>>(std::istream& in, Student& s);
-}; #pragma once
+};

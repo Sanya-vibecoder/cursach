@@ -1,37 +1,34 @@
 #include "Dormitory.h"
 #include <iostream>
 #include <limits>
-#include <clocale>
 
 void showMenu() {
-    std::cout << "\n===== ВІРТУАЛЬНИЙ ГУРТОЖИТОК =====\n";
-    std::cout << "1. Показати всі кімнати\n";
-    std::cout << "2. Показати вільні кімнати\n";
-    std::cout << "3. Показати всіх студентів\n";
-    std::cout << "4. Додати кімнату\n";
-    std::cout << "5. Додати студента\n";
-    std::cout << "6. Переселити студента\n";
-    std::cout << "7. Поповнити баланс студента\n";
-    std::cout << "8. Оплатити проживання\n";
-    std::cout << "9. Показати студентів через поліморфізм\n";
-    std::cout << "0. Вихід\n";
-    std::cout << "Ваш вибір: ";
+    std::cout << "\n===== DORMITORY MANAGEMENT =====\n";
+    std::cout << "1. Show all rooms\n";
+    std::cout << "2. Show free rooms\n";
+    std::cout << "3. Show all students\n";
+    std::cout << "4. Add a room\n";
+    std::cout << "5. Add a student\n";
+    std::cout << "6. Move a student\n";
+    std::cout << "7. Top up student balance\n";
+    std::cout << "8. Pay for dormitory\n";
+    std::cout << "9. Show students (polymorphism)\n";
+    std::cout << "0. Exit\n";
+    std::cout << "Your choice: ";
 }
 
 int main() {
-    setlocale(LC_ALL, "");
-
     Dormitory dorm;
 
-    // Початкові кімнати
+    // Initial rooms
     dorm.addRoom(Room(101, 2));
     dorm.addRoom(Room(102, 3));
     dorm.addRoom(Room(103, 1));
 
-    // Початкові студенти
-    dorm.addStudent(Student("Іван Петренко", 18, 1, 101, 2500));
-    dorm.addStudent(Student("Олена Коваль", 19, 2, 102, 1800));
-    dorm.addStudent(Student("Андрій Мельник", 20, 3, 0, 1200));
+    // Initial students
+    dorm.addStudent(Student("Ivan Petrenko", 18, 1, 101, 2500));
+    dorm.addStudent(Student("Olena Koval", 19, 2, 102, 1800));
+    dorm.addStudent(Student("Andriy Melnyk", 20, 3, 0, 1200));
 
     int choice;
 
@@ -42,7 +39,7 @@ int main() {
         if (!std::cin) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Некоректний ввід.\n";
+            std::cout << "Invalid input.\n";
             continue;
         }
 
@@ -54,19 +51,84 @@ int main() {
         case 2: {
             int count = 0;
             Room* freeRooms = dorm.getFreeRooms(count);
-
-            std::cout << "
-                == = Вільні кімнати == =
-                ";
-                if (count == 0) {
-                    std::cout << "Немає вільних кімнат.
-                        ";
+            std::cout << "\n=== Free rooms ===\n";
+            if (count == 0) {
+                std::cout << "No free rooms available.\n";
+            }
+            else {
+                for (int i = 0; i < count; i++) {
+                    std::cout << freeRooms[i] << "\n";
                 }
-                else {
-                    for (int i = 0; i < count; i++) {
-                        std::cout << freeRooms[i] << std::endl;
-                    }
-                }
-
+            }
             delete[] freeRooms;
+            break;
         }
+
+        case 3:
+            dorm.showStudents();
+            break;
+
+        case 4: {
+            Room room;
+            std::cin >> room;
+            dorm.addRoom(room);
+            std::cout << "Room added.\n";
+            break;
+        }
+
+        case 5: {
+            Student student;
+            std::cin >> student;
+            dorm.addStudent(student);
+            std::cout << "Student added.\n";
+            break;
+        }
+
+        case 6: {
+            int id, newRoom;
+            std::cout << "Student ID: ";
+            std::cin >> id;
+            std::cout << "New room number: ";
+            std::cin >> newRoom;
+            if (dorm.moveStudent(id, newRoom))
+                std::cout << "Student moved successfully.\n";
+            else
+                std::cout << "Failed to move student.\n";
+            break;
+        }
+
+        case 7: {
+            int id;
+            double amount;
+            std::cout << "Student ID: ";
+            std::cin >> id;
+            std::cout << "Amount to add: ";
+            std::cin >> amount;
+            dorm.topUpStudent(id, amount);
+            break;
+        }
+
+        case 8: {
+            int id;
+            std::cout << "Student ID: ";
+            std::cin >> id;
+            dorm.payForDorm(id);
+            break;
+        }
+
+        case 9:
+            dorm.showPeoplePolymorphically();
+            break;
+
+        case 0:
+            std::cout << "Goodbye!\n";
+            break;
+
+        default:
+            std::cout << "Unknown command.\n";
+        }
+
+    } while (choice != 0);
+
+    return 0;
+}

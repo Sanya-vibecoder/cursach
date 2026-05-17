@@ -1,75 +1,7 @@
 ﻿  Dormitory.cpp
   main.cpp
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Room.h(30,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'Dormitory.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Person.h(17,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'Dormitory.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.h(33,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'Dormitory.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\TemplateUtils.h(14,2): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'Dormitory.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Dormitory.h(48,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'Dormitory.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Dormitory.cpp(65,59): error C1075: '{': no matching token found
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Room.h(30,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'main.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Person.h(17,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'main.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.h(33,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'main.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\TemplateUtils.h(14,2): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'main.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Dormitory.h(48,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'main.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(58,26): error C2001: newline in constant
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(59,20): error C2059: syntax error: '='
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(59,22): error C3872: 'U+2019': this character is not allowed in an identifier
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(59,22): error C3872: 'U+2013': this character is not allowed in an identifier
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(59,22): error C3872: 'U+bb': this character is not allowed in an identifier
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(59,50): error C3872: 'U+2013': this character is not allowed in an identifier
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(59,50): error C3872: 'U+b0': this character is not allowed in an identifier
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(59,50): error C3872: 'U+201a': this character is not allowed in an identifier
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(60,17): error C2001: newline in constant
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(61,33): error C2143: syntax error: missing ';' before '{'
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(62,34): error C2001: newline in constant
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(63,25): error C2001: newline in constant
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(64,17): error C2143: syntax error: missing ';' before '}'
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(65,17): error C2181: illegal else without matching if
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\main.cpp(49,25): error C1075: '{': no matching token found
   Person.cpp
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Person.h(17,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'Person.cpp')
-  
   Room.cpp
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Room.h(30,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'Room.cpp')
-  
-  Source.cpp
   Student.cpp
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Person.h(17,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'Student.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.h(33,4): error C2014: preprocessor command must start as first nonwhite space
-  (compiling source file 'Student.cpp')
-  
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.cpp(2,1): error C2059: syntax error: 'if'
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.cpp(2,24): error C2143: syntax error: missing ';' before '{'
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.cpp(2,24): error C2447: '{': missing function header (old-style formal list?)
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.cpp(6,1): error C2059: syntax error: 'else'
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.cpp(6,6): error C2143: syntax error: missing ';' before '{'
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.cpp(6,6): error C2447: '{': missing function header (old-style formal list?)
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.cpp(9,1): error C2059: syntax error: '}'
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.cpp(9,1): error C2143: syntax error: missing ';' before '}'
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.cpp(11,46): error C2143: syntax error: missing ';' before '{'
-D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\Student.cpp(11,46): error C2447: '{': missing function header (old-style formal list?)
   Generating Code...
+  Курсач.vcxproj -> D:\ПОЛІТЕХ\Програмування_ООП\Курсова\Курсач\x64\Debug\Курсач.exe

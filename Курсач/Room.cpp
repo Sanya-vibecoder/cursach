@@ -32,17 +32,9 @@ Room::~Room() {
     delete[] residents;
 }
 
-int Room::getNumber() const {
-    return number;
-}
-
-int Room::getCapacity() const {
-    return capacity;
-}
-
-int Room::getOccupied() const {
-    return occupied;
-}
+int Room::getNumber() const { return number; }
+int Room::getCapacity() const { return capacity; }
+int Room::getOccupied() const { return occupied; }
 
 bool Room::isFree() const {
     return occupied < capacity;
@@ -50,11 +42,9 @@ bool Room::isFree() const {
 
 bool Room::addResident(int studentId) {
     if (!isFree()) return false;
-
     for (int i = 0; i < occupied; i++) {
         if (residents[i] == studentId) return false;
     }
-
     residents[occupied++] = studentId;
     return true;
 }
@@ -67,9 +57,7 @@ bool Room::removeResident(int studentId) {
             break;
         }
     }
-
     if (index == -1) return false;
-
     for (int i = index; i < occupied - 1; i++) {
         residents[i] = residents[i + 1];
     }
@@ -77,5 +65,33 @@ bool Room::removeResident(int studentId) {
     return true;
 }
 
+// Operator overloading
 bool Room::operator==(const Room& other) const {
+    return number == other.number;
+}
+
+bool Room::operator==(int roomNumber) const {
+    return number == roomNumber;
+}
+
+// Stream I/O
+std::ostream& operator<<(std::ostream& out, const Room& room) {
+    out << "Room #" << room.number
+        << " | capacity: " << room.capacity
+        << " | occupied: " << room.occupied
+        << " | free spots: " << (room.capacity - room.occupied);
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Room& room) {
+    std::cout << "Room number: ";
+    in >> room.number;
+    std::cout << "Capacity: ";
+    in >> room.capacity;
+    if (room.capacity < 1) room.capacity = 1;
+    delete[] room.residents;
+    room.residents = new int[room.capacity];
+    for (int i = 0; i < room.capacity; i++) room.residents[i] = 0;
+    room.occupied = 0;
+    return in;
 }

@@ -21,7 +21,7 @@ public:
     void addRoom(const Room& room);
     void addStudent(const Student& student);
 
-    int findStudent(int id) const;                 // перевантаження функцій
+    int findStudent(int id) const;                  // function overloading
     int findStudent(const std::string& name) const;
 
     int findRoom(int roomNumber) const;
@@ -32,10 +32,10 @@ public:
 
     Room* getFreeRooms(int& count) const;
 
-    bool moveStudent(int studentId, int newRoomNumber);               // перевантаження функцій
+    bool moveStudent(int studentId, int newRoomNumber);               // function overloading
     bool moveStudent(const std::string& studentName, int newRoomNumber);
 
-    bool payForDorm(int studentId);                                  // перевантаження функцій
+    bool payForDorm(int studentId);                                   // function overloading
     bool payForDorm(int studentId, double amount);
     bool payForDorm(const std::string& studentName);
     bool payForDorm(const std::string& studentName, double amount);
@@ -45,4 +45,4 @@ public:
 
     int getRoomCount() const;
     int getStudentCount() const;
-}; #pragma once
+};

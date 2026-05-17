@@ -14,4 +14,4 @@ public:
     int getAge() const;
 
     virtual void showInfo() const = 0;
-}; #pragma once
+};

@@ -27,4 +27,4 @@ public:
 
     friend std::ostream& operator<<(std::ostream& out, const Room& room);
     friend std::istream& operator>>(std::istream& in, Room& room);
-}; #pragma once
+};
