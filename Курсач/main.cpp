@@ -1,4 +1,5 @@
 #include "Dormitory.h"
+#include "TemplateUtils.h"    // needed for printArray<T> and bigger<T>
 #include <iostream>
 #include <limits>
 
@@ -27,8 +28,17 @@ int main() {
 
     // Initial students
     dorm.addStudent(Student("Ivan Petrenko", 18, 1, 101, 2500));
-    dorm.addStudent(Student("Olena Koval", 19, 2, 102, 1800));
-    dorm.addStudent(Student("Andriy Melnyk", 20, 3, 0, 1200));
+    dorm.addStudent(Student("Olena Koval",   19, 2, 102, 1800));
+    dorm.addStudent(Student("Andriy Melnyk", 20, 3, 0,   1200));
+
+    // Template bigger<T> — compare room capacities and balances at startup
+    int cap1 = 2, cap2 = 3;
+    std::cout << "\n[Template bigger<int>]    Larger room capacity: "
+              << bigger<int>(cap1, cap2) << " spots\n";
+
+    double bal1 = 2500.0, bal2 = 1800.0;
+    std::cout << "[Template bigger<double>] Highest starting balance: "
+              << bigger<double>(bal1, bal2) << "\n";
 
     int choice;
 
@@ -54,11 +64,9 @@ int main() {
             std::cout << "\n=== Free rooms ===\n";
             if (count == 0) {
                 std::cout << "No free rooms available.\n";
-            }
-            else {
-                for (int i = 0; i < count; i++) {
-                    std::cout << freeRooms[i] << "\n";
-                }
+            } else {
+                // Template printArray<Room> — uses Room::operator<< internally
+                printArray<Room>(freeRooms, count);
             }
             delete[] freeRooms;
             break;
